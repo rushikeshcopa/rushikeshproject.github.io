@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+            *{ padding: 0; margin: 0; box-sizing: border-box;}
+            .mainDiv{
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                background: rgb(3, 107, 241);
+            }
+            
+.centerDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50%);
+    text-align: center;
+}
+h1{
+    text-transform: capitalize;
+    
+    margin-bottom: 30px;
+    color: #ecf0f1;
+    text-shadow: 1px 2px 3px #2980b9;
+    font-size: 2.1rem;
+}
+h2{
+    text-align: center;
+}
+textarea{
+    background-color: #444;
+    box-shadow: 0 0 1px rgba(0,0,0,0.2);
+    border-radius: 10px 10px 0 0;
+    border: 20px solid #34495e;
+}
+        
+        </style>
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="centerDiv">
+                <h1>
+                    <i>Welcome To Typing Test</h1></i>
+                <h2 id="msg"></h2>
+                <textarea id="mywords" cols="100" rows="10" placeholder="Remember, be nice!"></textarea>
+                <br><br>
+                <button id="button" class="mainbtn">Start</button>
+                <br>
+            </div>
+        </div>
+        <script>
+            const setOfwords = ["my name is vinod bahadur thapa and i am a youtuber.",
+        "hope you are having fun this is a simple game you make.",
+    "if you are want the source code then link is given in the descripition,",
+"so you can create your own version of this challengs."];
+       const msg = document.getElementById('msg');
+       const typeWords = document.getElementById('typeWords');
+       const button = document.getElementById('button');
+       let StartTime , endTime;
+
+const playGame = () =>{
+    let randomNumber = Math.floor(math.random()*setOfwords.length );
+    msg.innerText = setOfwords[randomNumber];
+    let date = new date();
+    StartTime = date.getTime();
+    button.innerText = "Done";
+}
+
+const endplay = () =>{
+    let date = new date();
+    endTime = date.getTime();
+    let totalTime = ((endTime - StartTime)/ 1000);
+    console.log(totalTime);
+let totatstr = typeWords.value;
+let wordcount = wordcounter(totatstr);
+
+let speed =( math.round(wordcount / totalTime) * 60);
+let finalmsg = " you typed total at " +speed+ " words per minutes";
+}
+
+const wordcounter = (str) =>{
+    let response = str.split(" ").length;
+    console.log(response);
+    return response;
+}
+
+button.addEventListener('click', function(){
+ 
+    if(this.innerText == 'Start'){
+typeWords.disabled = false;
+playGame();
+    }else if(this.innerText =="Done"){
+        typeWords.disabled = true;
+        button.innerText = "Start";
+        endplay();
+
+    }
+})
+
+
+
+       </script>
+    </body>
+</html>
