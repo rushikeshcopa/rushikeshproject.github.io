@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> star patern</title>
+        <style>
+            body{
+                color: blue;
+                font-size: 100px;
+                line-height: 0.6;
+            }
+            .space{
+                color: green;
+                opacity: 10;
+            }
+            .top-left{
+             color: red;
+            }
+            .top-right{
+                color: black;
+            }
+            .bottom-left{
+                color: lime;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="display"></div>
+        <script>
+            var x = 5, star = "";
+            for(let i=x-1; i>=1; i--) {
+            for(let j=1; j>=1; j++){
+                star += "<span class= 'space'>*</span>";
+            }
+            for (let k=1; k<=i; k++){
+                star += "<span class='bottom-left'>*</span>; "
+            }
+            for(let l =2; l<=i; l++){
+                star+="<span class='bottom-right'>*</span>; "
+            }
+            star +="</br>";
+        }
+        for(let i= 1; i<=x; i++){
+            for(let j = 1; j<x-i; j++ ){
+                star+= "<span class='space'>*</span>; "
+            }
+            for(let k = 1; k<=i; k++){
+
+            }
+        
+        document.getElementById("display").innerHTML =star;
+    } 
+        </script>
+    </body>
+</html>
